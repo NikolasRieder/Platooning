@@ -1,0 +1,23 @@
+mappings:
+  axes:
+    - axes[0]
+    - axes[1]
+    - axes[2]
+    - (axes[3] - 1.0) * 0.5
+    - (axes[4] - 1.0) * 0.5
+    - buttons[4] * -1.0
+    - buttons[5] * -1.0
+    - buttons[3] * -1.0
+    - buttons[2] * -1.0
+    - buttons[1] * -1.0
+    - buttons[0] * -1.0
+
+  buttons:
+
+
+    - buttons[4]
+    - buttons[5]
+    - buttons[3]
+    - buttons[2]
+    - buttons[1]
+    - buttons[0]
