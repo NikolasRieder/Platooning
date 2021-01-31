@@ -1,0 +1,2 @@
+async_web_server_cpp:demos/dnn_rotate:demos/docking:demos/fiducial_follow:demos/move_demo:einscherung:geschwindigkeitsregulierung:handler:joystick_drivers/joy:joystick_drivers/joystick_drivers:joystick_drivers/ps3joy:joystick_drivers/spacenav_node:joystick_drivers/wiimote:joystickcontroll:joystickcontrollera:querlaengslenkung:raspicam_node:rplidar_ros:web_video_server
+-DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws/install -G Unix Makefiles

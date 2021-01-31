@@ -1,0 +1,51 @@
+//IF(FALSE) ANFANG
+if(FALSE){
+//Notstop
+	if( gl_front_distance < 5 && gl_btm_x == FALSE)
+	{
+		gl_notstop = TRUE;
+	}
+//Reset of Notstop
+	if(gl_notstop = TRUE && gl_btm_o == TRUE)
+	{
+		gl_notstop = FALSE;
+	}
+
+// VIERECK WURDE GEDRÜCKT ==> JOYSTICK WERTE PUBLISHEN
+	if ( (gl_btm_viereck == TRUE || vier_merker== TRUE) && (gl_btm_x == FALSE || x_merker == FALSE) )
+	{
+		// JOYSTICK´_WERTE PUBLISHEN
+		vier_merker = TRUE;
+		if(gl_btm_x = TRUE)
+		{	
+			vier_merker = FALSE;
+		}
+		//PUBLISHTEIL
+		std_msgs::UInt16 msg_v;
+		msg_v.data = gl_joy_value_v;
+		pub_velocity.publish(msg_v);
+
+		std_msgs::UInt16 msg_a;
+		msg_a.data = gl_joy_value_a;
+		pub_angleDirection.publish(msg_a);
+
+	}
+
+// X WURDE GEDRÜCKT ==> RPLIDAR WERTE PUBLISHEN
+	if ( (gl_btm_x == TRUE || x_merker== TRUE) && (gl_btm_viereck == FALSE || vier_merker == FALSE) && gl_notstop == FALSE)
+	{
+		x_merker = TRUE;
+		if(gl_btm_viereck = TRUE)
+		{	
+			x_merker = FALSE;
+		}
+
+		//PUBLISHTEIL
+		std_msgs::UInt16 msg_v;
+		msg_v.data = gl_rp_value_v;
+		pub_velocity.publish(msg_v);
+
+		std_msgs::UInt16 msg_a;
+		msg_a.data = gl_rp_value_a;
+		pub_angleDirection.publish(msg_a);
+	}
